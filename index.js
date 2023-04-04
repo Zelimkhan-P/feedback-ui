@@ -1,21 +1,22 @@
-const ratingEls = document.querySelectorAll('.rating');
-const btnEl = document.getElementById('btn');
+const ratingEls = document.querySelectorAll(".rating");
+const btnEl = document.getElementById("btn");
 
-const containerEl = document.getElementById('container');
+const containerEl = document.getElementById("container");
 
-let selectedRating = '';
+let selectedRating = "";
 
 ratingEls.forEach((ratingEl) => {
-  ratingEl.addEventListener('click', (event) => {
+  ratingEl.addEventListener("click", (event) => {
     removeActive();
-    selectedRating = event.target.innerText || event.target.parentNode.innerText;
-    event.target.classList.add('active');
-    event.target.parentNode.classList.add('active');
+    selectedRating =
+      event.target.innerText || event.target.parentNode.innerText;
+    event.target.classList.add("active");
+    event.target.parentNode.classList.add("active");
   });
 });
 
-btnEl.addEventListener('click', () => {
-  if (selectedRating !== '') {
+btnEl.addEventListener("click", () => {
+  if (selectedRating !== "") {
     containerEl.innerHTML = `
         <strong>Thank you!</strong>
         <br>
@@ -27,7 +28,7 @@ btnEl.addEventListener('click', () => {
 });
 
 function removeActive() {
-    ratingEls.forEach((ratingEl) => {
-        ratingEl.classList.remove('active');
-    })
+  ratingEls.forEach((ratingEl) => {
+    ratingEl.classList.remove("active");
+  });
 }
